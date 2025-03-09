@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasa: Управление обращениями</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+      }
+      .ticket {
+          border: 1px solid #ccc;
+          padding: 10px;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          background-color: #f9f9f9;
+      }
+      .ticket button {
+          margin-right: 10px;
+      }
+      form {
+          margin-bottom: 20px;
+      }
+      #tickets-container {
+          display: none;
+          margin-top: 20px;
+      }
+      #hide-tickets-btn {
+          margin-bottom: 20px;
+      }
+  </style>
+</head>
+<body>
+<h1>Kasa: Управление обращениями</h1>
+
+<!-- Форма для создания нового обращения -->
+<h2>Создать новое обращение</h2>
+<form id="create-ticket-form">
+  <label>
+    Тема:
+    <input type="text" id="topic" required>
+  </label><br><br>
+  <label>
+    Описание:
+    <textarea id="description" required></textarea>
+  </label><br><br>
+  <button type="submit">Создать обращение</button>
+</form>
+
+<!-- Показ списка обращений-->
+<button id="show-tickets-btn">Показать список обращений</button>
+<button id="cancel-all-in-work" style="display: none;">Отменить все обращения в работе</button>
+
+<!-- Местохранений списка обращений
+-->
+<div id="tickets-container"></div>
+
+<!-- Фильтрация обращений -->
+<h2>Фильтрация обращений</h2>
+
+<!-- Фильтрация по конкретной дате -->
+<form id="filter-date-form">
+  <label>
+    Фильтровать по конкретной дате:
+    <input type="date" id="filter-date" required>
+  </label><br><br>
+  <button type="submit">Применить фильтр по дате</button>
+</form>
+
+<!-- Фильтрация по диапазону дат -->
+<form id="filter-range-form">
+  <label>
+    Фильтровать по диапазону дат:<br>
+    От: <input type="date" id="filter-start-date" required>
+    До: <input type="date" id="filter-end-date" required>
+  </label><br><br>
+  <button type="submit">Применить фильтр по диапазону</button>
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
